@@ -1,0 +1,19 @@
+<app-cabecera></app-cabecera>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Pregunta</th>
+        <th>Respuesta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pregunta of preguntas; let i = index" [ngClass]="{'selected': selectedRow === i}" (click)="seleccionarFila(i)" (dblclick)="verDetalles(i)">
+        <td>{{ i + 1 }}</td>
+        <td>{{ pregunta.pregunta }}</td>
+        <td>{{ pregunta.respuesta }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  

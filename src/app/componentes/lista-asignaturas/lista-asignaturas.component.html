@@ -1,0 +1,20 @@
+<app-cabecera></app-cabecera>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Nombre</th>
+        <th>Siglas</th>
+        <th>Profesor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asignatura of asignaturas; let i = index" [ngClass]="{'selected': selectedRow === i}" (click)="seleccionarFila(i)" (dblclick)="verDetalles(i)">
+        <td>{{ i + 1 }}</td>
+        <td>{{ asignatura.nombre }}</td>
+        <td>{{ asignatura.siglas }}</td>
+        <td>{{ asignatura.profesor }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
